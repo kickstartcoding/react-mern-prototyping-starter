@@ -1,0 +1,55 @@
+.App {
+    background: linear-gradient(to top, #ff00cc, #333399);
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr minmax(auto, 800px) 1fr;
+    grid-template-rows: 100px auto;
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+    align-items: stretch;
+}
+
+.App-navigation {
+    padding: 10px;
+    color: white;
+}
+
+.App-sidebar {
+    background: rgba(255, 255, 255, 0.9);
+    display: relative;
+    padding: 10px;
+}
+
+.App-sidebar img {
+    max-width: 100%;
+}
+
+.App-navigation h1 {
+    font-size: 36pt;
+}
+
+.Article-title {
+    font-size: 2em;
+}
+
+.App-navigation {
+    grid-column: 2 / span 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.App-navigation a {
+    font-size: 14pt;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5) inset;
+}
+
+.App-mainContent {
+    grid-column: 2;
+}
+
+
