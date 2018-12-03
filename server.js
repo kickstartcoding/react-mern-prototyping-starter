@@ -1,3 +1,4 @@
+const path = require('path');
 const express = require('express');
 const MongoClient = require('mongodb').MongoClient;
 const app = express();
@@ -63,10 +64,10 @@ app.post('/api/mongodb/:collectionName/', (request, response) => {
   const data = request.body;
 
   db.collection(collectionName)
-    .insert(data)
-    .toArray((err, results) => {
+    .insert(data, (err, results) => {
       // Got data back.. send to client
       if (err) throw err;
+
       response.json({
         'success': true,
         'results': results,
@@ -158,7 +159,7 @@ const mongoDbDatabaseName = splitUrl[splitUrl.length - 1];
 
 let db;
 // Connect to the MongoDB
-MongoClient.connect(MONGODB_URL, (err, client) => {
+MongoClient.connect(MONGODB_URL, {useNewUrlParser: true}, (err, client) => {
   if (err) throw err;
   console.log("--MongoDB connection successful");
   db = client.db(mongoDbDatabaseName);

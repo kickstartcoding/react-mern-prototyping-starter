@@ -44,7 +44,7 @@ npm install
 For local development, use the included "run.sh" Bash script:
 
 ```bash
-./run.sh
+bash run.sh
 ```
 
 Look inside the script. Can you understand what it is doing? It's not very
