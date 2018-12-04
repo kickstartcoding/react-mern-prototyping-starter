@@ -77,6 +77,7 @@ heroku config
 ```
 
 You should see `MONGODB_URI` specified, something like:
+
     MONGODB_URI  mongodb://someUser:somePassword@something.com:1234/someDatabaseName 
 
 Launching to Heroku is like any other app:
@@ -84,6 +85,8 @@ Launching to Heroku is like any other app:
 ```bash
 git push heroku master
 ```
+
+
 
 
 
