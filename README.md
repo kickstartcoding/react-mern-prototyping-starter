@@ -1,10 +1,11 @@
 # MERN Prototyping Starter
 
-This is an example start project for [Kickstart Coding](http://kickstartcoding.com/)
+This is an example start project for [Kickstart
+Coding](http://kickstartcoding.com/) MERN MVP projects.
 
-**DO NOT** use this project in production. It exposes an API to MongoDB
-without any sort of security. The only purpose of the API is to allow rapid
-front-end prototyping.
+**DO NOT** use this project in production. It exposes an API to MongoDB without
+any sort of security. The only purpose of the API is to allow rapid front-end
+prototyping without much (or any) backend modifications.
 
 ## Usage
 
@@ -12,22 +13,26 @@ front-end prototyping.
 ### Set-up
 
 1. Get the code. You can either download this repo as a tar.gz or zip file,
-then extract, or do a git pull and copy over the files into your project.
+then extract, do a git pull and copy over the files into your project, or fork
+this project.
 
-2. Set-up your MongoDB database. Either set-up an mLab database for testing
-purposes with your team (easiest), or install and configure a local DB.
+2. Set-up your MongoDB database. Either set-up an [mLab.com](http://mLab.com)
+database for testing purposes with your team (easiest), or install and
+configure a local DB.
 
-3. Create a ".env.local" file, that contains your credentials. This file WILL
-NOT go into your git repo (because it is in .gitignore). It should be in the
-following format:
+3. Create a ".env.local" file, that contains your credentials.
 
-```bash
-export MONGODB_URI='mongodb://USERNAME:PASSWORD@something.com:1234/DB_NAME'
-```
+    - This file WILL NOT go into your git repo (because it is in .gitignore).
+      If you will be using the supplied run.sh, it should be in the following
+      format:
 
-Where USERNAME and PASSWORD is replaced with an actual username and password on
-the MongoDB. In the case of mLab, you will have to create a username and
-password as a separate step.
+    ```bash
+    export MONGODB_URI='mongodb://USERNAME:PASSWORD@something.com:1234/DB_NAME'
+    ```
+
+    - Where USERNAME and PASSWORD is replaced with an actual username and
+    password on the MongoDB. In the case of mLab, you will have to create a
+    username and password as a separate step.
 
 4. NPM install backend:
 
