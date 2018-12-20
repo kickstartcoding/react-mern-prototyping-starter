@@ -127,11 +127,6 @@ app.delete('/api/mongodb/:collectionName/', (request, response) => {
 
 
 
-app.post('/api/mongodb/:collectionName/', (request, response) => {
-  const collection = request.params.collectionName;
-});
-
-
 
 
 /////////////////////////////////////////////
