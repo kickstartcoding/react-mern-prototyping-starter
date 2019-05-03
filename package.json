@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "scripts": {
     "postinstall": "bash ./client/build.sh",
     "start": "node server.js"

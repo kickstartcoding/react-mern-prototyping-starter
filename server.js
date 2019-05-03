@@ -124,8 +124,8 @@ app.get('*', (req, res) => {
 // Set up configuration variables
 if (!process.env.MONGODB_URI) {
   console.log('- Error - Must specify the following env variables:');
-  console.log("MONGODB_URI='mongodb://someUser:somePassword@something.com:1234/someDatabaseName'");
-  console.log('- Consider putting into .env.local');
+  console.log("MONGODB_URI='mongodb://someUser:somePW@site.com:1234/someDB'");
+  console.log('- (See README.md)');
   process.exit(1);
 }
 const MONGODB_URL = process.env.MONGODB_URI;
@@ -133,7 +133,7 @@ const splitUrl = MONGODB_URL.split('/');
 const mongoDbDatabaseName = splitUrl[splitUrl.length - 1];
 
 let db;
-// Connect to the MongoDB
+// First connect to MongoDB, then start HTTP server
 MongoClient.connect(MONGODB_URL, {useNewUrlParser: true}, (err, client) => {
   if (err) throw err;
   console.log("--MongoDB connection successful");

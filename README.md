@@ -55,7 +55,6 @@ For local development, use the included "run.sh" Bash script:
 ```bash
 bash run.sh
 ```
-
 Look inside the script. Can you understand what it is doing?  It's main goal is
 just to save you the steps of opening up two terminal windows or tabs. You can,
 however, still do that method, it's up to you.
@@ -86,7 +85,16 @@ Launching to Heroku is like any other app:
 git push heroku master
 ```
 
+# Securing the backend
 
+After the prototype is built, the backend can be incrementally secured by
+creating custom routes that do the logic required for your application, and
+delete each generic / insecure route. For example, instead of allowing deletion
+of ANY documents, it could only allow queries in a certain format to only
+delete from a certain collection, relevant to your application. Also, you may
+consider using an authentication framework for Express.js, such as Passport.
 
+Once you replace a given insecure route, and make the front-end use the new
+route, you can delete the old route.
 
 
