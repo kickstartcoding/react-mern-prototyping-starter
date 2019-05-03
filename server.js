@@ -14,37 +14,16 @@ app.use(logger);
 /////////////////////////////////////////////
 
 
-
-//
-// Example route (without use of MongoDB)
-app.get('/api/some/example/route/', (request, response) => {
-  console.log('Example route is being used...');
-
-  response.json({
-    someExample: 'data',
-  });
-});
+/// YOUR ROUTES GO HERE!
 
 
-//
-// Example route (with use of MongoDB)
-app.get('/api/some/example/with/mongodb/', (request, response) => {
-  console.log('Example route with MongoDB is being used...');
+/////////////////////////////////////////////
 
-  db.collection('nameOfCollection')
-    .find({})
-    .toArray((err, results) => {
-      // Got data back.. send to client
-      if (err) throw err;
-      response.json(results);
-    });
-});
+// Totally insecure backend routes below, good only for rapid prototyping
+// unsecured front-end applications. Should not be used in production.
 
 
-
-//
-// Totally insecure backend routes, good for rapid prototyping
-// DELETE before use in a real application
+// GET for getting existing item
 app.get('/api/mongodb/:collectionName/', (request, response) => {
   const collectionName = request.params.collectionName;
 
@@ -59,6 +38,7 @@ app.get('/api/mongodb/:collectionName/', (request, response) => {
     });
 });
 
+// POST for creating a new item
 app.post('/api/mongodb/:collectionName/', (request, response) => {
   const collectionName = request.params.collectionName;
   const data = request.body;
