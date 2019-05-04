@@ -1,18 +1,9 @@
 const path = require('path');
 const express = require('express');
 const MongoClient = require('mongodb').MongoClient;
+const ObjectId = require('mongodb').ObjectId;
 const app = express();
 app.use(express.json());
-
-/////////////////////////////////////////////
-// Logger & configuration
-function logger(req, res, next) {
-  console.log(req.method, req.url);
-  next();
-}
-app.use(logger);
-/////////////////////////////////////////////
-
 
 /// YOUR ROUTES GO HERE!
 
@@ -27,8 +18,15 @@ app.use(logger);
 app.get('/api/mongodb/:collectionName/', (request, response) => {
   const collectionName = request.params.collectionName;
 
-  // Get GET params
+  // Get GET params, if there are any
   const query = request.query || {};
+
+  // Due to a requirement of MongoDB, whenever we query based on _id field, we
+  // have to do it like this using ObjectId
+  if (query._id) {
+    query._id = ObjectId(query._id);
+  }
+
   db.collection(collectionName)
     .find(query)
     .toArray((err, results) => {
@@ -62,8 +60,14 @@ app.put('/api/mongodb/:collectionName/', (request, response) => {
   const data = request.body;
   const query = request.query;
 
+  // Due to a requirement of MongoDB, whenever we query based on _id field, we
+  // have to do it like this using ObjectId
+  if (query._id) {
+    query._id = ObjectId(query._id);
+  }
+
   db.collection(collectionName)
-    .update(query, {$set: data}, (err, results) => {
+    .updateOne(query, {$set: data}, (err, results) => {
       if (err) throw err;
 
       // If we modified exactly 1, then success, otherwise failure
@@ -83,8 +87,13 @@ app.put('/api/mongodb/:collectionName/', (request, response) => {
 // D in CRUD, delete a single item with given criteria
 app.delete('/api/mongodb/:collectionName/', (request, response) => {
   const collectionName = request.params.collectionName;
-  const data = request.body;
   const query = request.query;
+
+  // Due to a requirement of MongoDB, whenever we query based on _id field, we
+  // have to do it like this using ObjectId
+  if (query._id) {
+    query._id = ObjectId(query._id);
+  }
 
   db.collection(collectionName)
     .deleteOne(query, (err, results) => {
@@ -111,6 +120,16 @@ app.delete('/api/mongodb/:collectionName/', (request, response) => {
 
 /////////////////////////////////////////////
 // Boilerplate, no need to touch what's below
+
+/////////////////////////////////////////////
+// Logger & configuration
+function logger(req, res, next) {
+  console.log(req.method, req.url);
+  next();
+}
+app.use(logger);
+/////////////////////////////////////////////
+
 
 // For production, handle any requests that don't match the ones above
 app.use(express.static(path.join(__dirname, 'client/build')));

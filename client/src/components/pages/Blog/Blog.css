@@ -1,2 +1,27 @@
 .Blog {
 }
+
+.Blog-article {
+  background: white;
+  padding: 10px;
+  margin: 10px;
+  position: relative;
+}
+
+.Blog-articleActions > div {
+  display: inline-block;
+  position: absolute;
+  top: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.Blog-articleActions > div:first-child {
+  right: 10px;
+}
+
+.Blog-articleActions > div:last-child {
+  left: 10px;
+}
+
+
