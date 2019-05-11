@@ -6,7 +6,7 @@ MongoDB has a new cloud-based Atlas feature that has replaced M Lab. Unfortunate
 
 Cluster basically means database. If you already have a cluster created (You see text like Cluster0), you can skip all these steps and go to "Create your database user".
 
-1. Sign up for http://cloud.mongodb.com
+1. Sign up for <http://cloud.mongodb.com>
 
 2. Go to "Create New Cluster" (if it isn't already selected)
 
@@ -18,7 +18,7 @@ Cluster basically means database. If you already have a cluster created (You see
 
 6. It will then take you a "creating cluster page". It will warn you that it could take 5-10 minutes to create your cluster and get it ready. Some students have reported it has taken even longer than that. Cross your fingers that it will only take a few minutes!
 
-7. Refresh after a bit of time to see if it has been created. If it was successful
+7. Refresh after a bit of time to see if it has been created. If it was successful you should see something like `Cluster0` in big text with some graphs about performance of your (currently) empty DB
 
 
 ### Create your database user
@@ -40,10 +40,10 @@ By default, MongoDB bans everybody, except IP addresses on the "whitelist" (like
 
 2. Click the green button `Add Your Current IP Address`
 
-3. Click the green button `Add IP`
-
+3. Click the green button `Add IP Address`
 
 Note that if you work somewhere else -- e.g. your home, coffee shop, office, school, etc -- Your IP address changes when you change connections, so you may have to repeat this step to add your new IP to the whitelist. You won't have to do any other steps.
+
 
 ### Connect to your cluster
 
@@ -55,7 +55,7 @@ The first connection we should do will be to connect in a terminal, to test ever
 
 3. Click the "I have the Mongo Shell installed" (since you should have that)
 
-4. Look at `(2) Run your connection string in the command line`, and copy the command you see there. You may have to replace the `<password>` with the password you created when you created a MongoDB user
+4. Look at `(2) Run your connection string in the command line`, and copy the command you see there. Depending on the command they give you, you might have to replace the `<password>` with the password you created when you created a MongoDB user, or you might have to enter it in after you run the command.
 
 5. Paste it into a terminal
 
