@@ -4,7 +4,7 @@ MongoDB has a new cloud-based Atlas feature that has replaced M Lab. Unfortunate
 
 ### Build your first "cluster"
 
-Cluster means, basically database
+Cluster basically means database. If you already have a cluster created (You see text like Cluster0), you can skip all these steps and go to "Create your database user".
 
 1. Sign up for http://cloud.mongodb.com
 
