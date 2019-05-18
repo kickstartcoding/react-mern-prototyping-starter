@@ -86,6 +86,14 @@ Launching to Heroku is like any other app:
 
     git push heroku master
 
+# Understanding the code
+
+Once you have it locally running, try the following:
+
+1. Create an article
+
+2. View the articles API using localhost:8080/api/mongodb/blogposts/
+
 
 # Securing the backend
 

@@ -79,7 +79,7 @@ Now, you want to have your MERN backend connect to your MongoDB database.
 
 4. In your MERN starter, create a `.env.local` file that has the following line:
 
-    export MONGODB_URI='mongodb+srv://dbUser:<password>@cluster0-udki0.mongodb.net/test?retryWrites=true'
+    export MONGODB_URI='mongodb+srv://dbUser:<password>@cluster0-udki0.mongodb.net/test'
 
 NOTE: You will have to replace everything between the quotes with the string that you got from Atlas. Also, you will have to change the `<password>` to be the password you created before.
 
