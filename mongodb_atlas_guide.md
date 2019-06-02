@@ -42,7 +42,12 @@ By default, MongoDB bans everybody, except IP addresses on the "whitelist" (like
 
 3. Click the green button `Add IP Address`
 
-Note that if you work somewhere else -- e.g. your home, coffee shop, office, school, etc -- Your IP address changes when you change connections, so you may have to repeat this step to add your new IP to the whitelist. You won't have to do any other steps.
+
+**NOTE:**
+
+* While building your app or before launching, if it gets too annoying to continually whitelist IP addresses, you might want to whitelist a "wildcard" IP address that will allow all connections going forward. To do that, add the special code `0.0.0.0/0` to your whitelist, which is means "allow ANY IP addresses".
+
+* If you work somewhere else -- e.g. your home, coffee shop, office, school, etc -- Your IP address changes when you change connections, so unless you add the wildcard as above, you may have to repeat the previous steps to add your new IP to the whitelist. You will know if an IP address is not working if you are positive everything is correctly set up, but you are still failing to connect.
 
 
 ### Connect to your cluster
