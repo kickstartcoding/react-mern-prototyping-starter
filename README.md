@@ -85,13 +85,9 @@ have already done this.
       create a username and password as a separate step (see the
       [`mongodb_atlas_guide.md`](./mongodb_atlas_guide.md))
 
-4. NPM install backend:
+4. NPM install (this will install for both backend and frontend, and may take a
+while):
 
-    npm install
-
-5. NPM install frontend:
-
-    cd client
     npm install
 
 
