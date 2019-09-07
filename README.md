@@ -1,4 +1,4 @@
-[Kickstart Coding Logo](./client/public/kickstart_coding_logo.png)
+![Kickstart Coding Logo](./client/public/kickstart_coding_logo.png)
 
 # MERN Prototyping Starter
 
