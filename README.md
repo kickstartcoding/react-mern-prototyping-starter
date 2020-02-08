@@ -93,13 +93,37 @@ while):
 
 ### Running
 
+You have two options for running local development, either manually starting
+the server using two terminals, or using the included `run.sh` which does that
+for you in a single terminal.
+
+#### Two terminals
+
+Open up two terminals, one for the backend, the other for the front-end. The
+backend server will run using Node Monitor ("nodemon") which will auto-restart
+when you make changes.
+
+**Backend terminal:**
+
+    source .env.local
+    ./node_modules/.bin/nodemon server.js
+
+**Frontend terminal:**
+
+    cd client
+    npm run start
+
+
+
+#### One terminal: `run.sh`
+
 For local development, use the included "run.sh" Bash script:
 
     bash run.sh
 
-Look inside the script. Can you understand what it is doing?  It's main goal is
-just to save you the steps of opening up two terminal windows or tabs. You can,
-however, still do that method, it's up to you.
+Look inside the script. Can you understand what it is doing?  It does the same
+thing as the previous instructions, but saved into a script form, so you won't
+have to open multiple terminals or tabs.
 
 
 ### Heroku

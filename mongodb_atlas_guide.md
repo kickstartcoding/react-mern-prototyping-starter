@@ -27,9 +27,11 @@ Every time you want to use your cluster, you will have to follow this procedure 
 
 1. Once your cluster is created, click the `CONNECT` gray button underneath it's name.
 
-2. Look under the `(2) Create a MongoDB User`, write a Username (can be anything, this will just be for your app / teammates), and password (just click the "Autogenerate Secure Password" is a good idea). Now, write down somewhwere this username and password. For example: dbUser and aB9OKFdCJmP9flZu
+2. Look under the `(2) Create a MongoDB User`, write a Username (can be anything, make it simple and easy to remember, this will just be for your app / teammates), and password (should only be alphanumeric, so just click the "Autogenerate Secure Password" is a good idea). Now, write down somewhwere this username and password. For example: dbUser and aB9OKFdCJmP9flZu
 
 3. Now, click `[Create a MongoDB User]` button
+
+* **Note:** For username and password, pick ones that are just alphabetical or alphanumeric, since you'll be having to include this in configuration and it's easy to mess up if you include special characters.
 
 
 ### Whitelist your IP address
@@ -43,11 +45,22 @@ By default, MongoDB bans everybody, except IP addresses on the "whitelist" (like
 3. Click the green button `Add IP Address`
 
 
-**NOTE:**
 
-* While building your app or before launching, if it gets too annoying to continually whitelist IP addresses, you might want to whitelist a "wildcard" IP address that will allow all connections going forward. To do that, add the special code `0.0.0.0/0` to your whitelist, which is means "allow ANY IP addresses".
+**Recommended:** Add `0.0.0.0/0` in addition / instead of your current IP
+address. This will whitelist ALL IP addresses. (Less secure, but more
+convenient for development.)
 
-* If you work somewhere else -- e.g. your home, coffee shop, office, school, etc -- Your IP address changes when you change connections, so unless you add the wildcard as above, you may have to repeat the previous steps to add your new IP to the whitelist. You will know if an IP address is not working if you are positive everything is correctly set up, but you are still failing to connect.
+
+**Explaination:** While building your app or before launching, if it gets too
+annoying to continually whitelist IP addresses, you might want to whitelist a
+"wildcard" IP address that will allow all connections going forward. To do
+that, add the special code `0.0.0.0/0` to your whitelist, which is means "allow
+ANY IP addresses".  The reason is when you work somewhere else -- e.g. your
+home, coffee shop, office, school, etc -- Your IP address changes when you
+change connections, so unless you add the wildcard as above, you may have to
+repeat the previous steps to add your new IP to the whitelist. You will know if
+an IP address is not working if you are positive everything is correctly set
+up, but you are still getting a "failing to connect" error.
 
 
 ### Connect to your cluster
