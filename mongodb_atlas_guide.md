@@ -6,7 +6,7 @@ MongoDB has a new cloud-based Atlas feature that has replaced M Lab. Unfortunate
 
 Cluster basically means database. If you already have a cluster created (You see text like Cluster0), you can skip all these steps and go to "Create your database user".
 
-1. Sign up for <http://cloud.mongodb.com>
+1. Sign up for <http://mongodb.com/cloud>
 
 2. Go to "Create New Cluster" (if it isn't already selected)
 
@@ -65,13 +65,19 @@ up, but you are still getting a "failing to connect" error.
 
 ### Connect to your cluster
 
+If you don't have MongoDB shell installed yet, install it with one of the following commands:
+
+* **macOS:** `brew install mongodb/brew/mongodb-community-shell`
+
+* **Ubuntu GNU/Linux:** `sudo apt-get install mongodb`
+
 The first connection we should do will be to connect in a terminal, to test everything and make sure it works. If you want, you can skip this section, and go to the next, setting up MERN.
 
-1. Click `Choose a connection method` green button
+1. Click a green button called `Choose a connection method`
 
 2. Click Connect with the Mongo Shell
 
-3. Click the "I have the Mongo Shell installed" (since you should have that)
+3. Click the "I have the Mongo Shell installed"
 
 4. Look at `(2) Run your connection string in the command line`, and copy the command you see there. Depending on the command they give you, you might have to replace the `<password>` with the password you created when you created a MongoDB user, or you might have to enter it in after you run the command.
 
@@ -99,8 +105,12 @@ Now, you want to have your MERN backend connect to your MongoDB database.
 
     export MONGODB_URI='mongodb+srv://dbUser:<password>@cluster0-udki0.mongodb.net/test'
 
-NOTE: You will have to replace everything between the quotes with the string that you got from Atlas. Also, you will have to change the `<password>` to be the password you created before.
 
 5. Now, run `run.sh` and the test application should work!
 
+- NOTE: You will have to replace everything between the quotes with the string
+  that you got from Atlas. Also, you will have to change the `<password>` to be
+  the password you created before.
 
+- NOTE: If the connection string has a '?' close to the end (like GET
+  parameters), you should probably delete it any everything that follows it

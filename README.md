@@ -50,7 +50,7 @@ front-end prototyping without much (or any) backend modifications. See the
 
 > This was original created for Kickstart Coding, the affordable,
 > inclusive, and intensive coding course teaching cutting-edge Python /
-> Django and JavaScript / React web development in Oakland, CA.
+> Django and JavaScript / React web development.
 > [Learn more and enroll here.](http://kickstartcoding.com/?utm_source=github&utm_campaign=cheatsheets)
 
 ## Usage
@@ -133,23 +133,21 @@ your MongoDB Atlas database on Heroku, you will need to configure it with
 Heroku. Use a command like below, except with the same string you did in the
 previous steps (`.env.local`):
 
-    heroku config:set MONGODB_URI='mongodb://someUser:...'
-
+        heroku config:set MONGODB_URI='mongodb://someUser:...'
 
 To ensure Heroku has the right configuration values set (which should occur
 after you have done `heroku create` to make a new Heroku app), do a command
 like the following:
 
-
-    heroku config
+        heroku config
 
 You should see your `MONGODB_URI` specified, something like:
 
-    MONGODB_URI  mongodb://someUser:somePassword@something.com:1234/someDatabaseName 
+        MONGODB_URI  mongodb://someUser:somePassword@something.com:1234/someDatabaseName 
 
 Launching to Heroku is like any other app:
 
-    git push heroku master
+        git push heroku master
 
 
 # Understanding the code
