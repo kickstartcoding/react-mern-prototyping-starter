@@ -1,29 +1,25 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import './WriteArticle.css';
 
-class WriteArticle extends Component {
-  state = {
-    title: '',
-    text: '',
+function WriteArticle(props) {
+  const [title, setTitle] = useState('');
+  const [content, setContent] = useState('');
+
+  function onChangeContent(ev) {
+    setContent(ev.target.value);
   }
 
-  onChangeContent = (ev) => {
-    this.setState({
-      text: ev.target.value,
-    });
+  function onChangeTitle(ev) {
+    setTitle(ev.target.value);
   }
 
-  onChangeTitle = (ev) => {
-    this.setState({
-      title: ev.target.value,
-    });
-  }
-
-  submit = () => {
+  function submit() {
     const formData = {
-      title: this.state.title,
-      text: this.state.text,
+      title: title,
+      text: content,
     };
+    // Can also be written:
+    // const formData = {title, text: content};
 
     fetch('/api/mongodb/blogposts/', {
         method: 'POST',
@@ -35,37 +31,33 @@ class WriteArticle extends Component {
         console.log('Got this back', data);
 
         // Redirect to blog
-        this.props.history.push('/blog/');
+        props.history.push('/blog/');
       });
   }
 
+  return (
+    <div className="WriteArticle">
+      <h1>Write an article</h1>
+      <input
+          name="title"
+          placeholder="Title"
+          value={title}
+          onChange={onChangeTitle}
+        />
+      <br />
 
-  render() {
-    return (
-      <div className="WriteArticle">
-        <h1>Write an article</h1>
-        <input
-            name="title"
-            placeholder="Title"
-            value={this.state.title}
-            onChange={this.onChangeTitle}
-          />
-        <br />
+      <textarea
+          name="content"
+          placeholder="Contents"
+          value={content}
+          onChange={onChangeContent}
+        />
 
-        <textarea
-            name="content"
-            placeholder="Contents"
-            value={this.state.details}
-            onChange={this.onChangeContent}
-          />
+      <br />
 
-        <br />
-
-        <button onClick={this.submit}>Add to blog</button>
-      </div>
-
-    );
-  }
+      <button onClick={submit}>Add to blog</button>
+    </div>
+  );
 }
 
 export default WriteArticle;

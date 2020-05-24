@@ -18,7 +18,7 @@ front-end prototyping without much (or any) backend modifications. See the
 ### Features
 
 * `react` and `react-router` are set-up in a normal, `create-react-app` layout
-    * Does NOT use Redux, to keep things simpler
+    * It DOES NOT use Redux, to keep things simpler
 
 * Example blogging single page app App that does all four CRUD operation in a
   heavily commented way, for examples to do everything
@@ -48,10 +48,10 @@ front-end prototyping without much (or any) backend modifications. See the
   either **macOS** or a **GNU/Linux** distribution such as Ubuntu. That said,
   it might work.
 
-> This was original created for Kickstart Coding, the affordable,
-> inclusive, and intensive coding course teaching cutting-edge Python /
-> Django and JavaScript / React web development.
-> [Learn more and enroll here.](http://kickstartcoding.com/?utm_source=github&utm_campaign=cheatsheets)
+> This was original created for Kickstart Coding, the affordable, inclusive,
+> and intensive coding course teaching cutting-edge Python / Django and
+> JavaScript / React web development.
+> [Learn more and enroll here.](https://kickstartcoding.com/?utm_source=github&utm_campaign=cheatsheets)
 
 ## Usage
 
@@ -164,7 +164,7 @@ Once you have it locally running, try the following:
 After the prototype is built, the backend can be incrementally secured by
 creating custom routes that do the logic required for your application, and
 delete each generic / insecure route. For example, instead of allowing deletion
-of ANY documents, it could only allow queries in a certain format to only
+of ANY documents, it could only allow requests in a certain format to only
 delete from a certain collection, relevant to your application. Also, you may
 consider using an authentication framework for Express.js, such as Passport.
 
@@ -173,6 +173,5 @@ route, you can delete the old route.
 
 Once you have deleted ALL of the generic / in-secure routes, and only have
 custom and securely written routes, then this prototyping set-up will be as
-secure as any other typical MERN-backend.
-
+secure as any other typical MERN backend.
 

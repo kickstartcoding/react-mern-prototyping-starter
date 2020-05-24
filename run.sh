@@ -16,6 +16,9 @@ else
   exit 1
 fi
 
+# Kill all processes if exit (stackoverflow.com/questions/360201)
+trap "trap - SIGTERM && kill -- -$$" SIGINT SIGTERM EXIT
+
 # Get the back-end running in the background
 ./node_modules/.bin/nodemon server.js &
 

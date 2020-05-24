@@ -7,7 +7,7 @@ import LandingPage from './components/pages/LandingPage/LandingPage.js';
 import Blog from './components/pages/Blog/Blog.js';
 import WriteArticle from './components/pages/WriteArticle/WriteArticle.js';
 
-function App {
+function App () {
   return (
     <div className="App">
       <nav className="App-navigation">
