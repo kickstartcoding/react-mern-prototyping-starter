@@ -66,6 +66,9 @@ app.put('/api/mongodb/:collectionName/', (request, response) => {
     query._id = ObjectId(query._id);
   }
 
+  // MongoDB disallows _id fields from being updated, delete if it exists
+  delete data._id;
+
   db.collection(collectionName)
     .updateOne(query, {$set: data}, (err, results) => {
       if (err) throw err;

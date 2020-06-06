@@ -101,15 +101,17 @@ Now, you want to have your MERN backend connect to your MongoDB database.
 
 3. Copy the `Connection String Only`
 
-4. In your MERN starter, create a `.env.local` file that has the following line:
+4. In your MERN starter, create a `.env.local` file that has the something
+similar to following line:
 
-    export MONGODB_URI='mongodb+srv://dbUser:<password>@cluster0-udki0.mongodb.net/test'
+
+        export MONGODB_URI='mongodb+srv://DBUSER:PASSWORD@cluster0-udki0.mongodb.net/test'
 
 
 5. Now, run `run.sh` and the test application should work!
 
 - NOTE: You will have to replace everything between the quotes with the string
-  that you got from Atlas. Also, you will have to change the `<password>` to be
+  that you got from Atlas. Also, you will have to change the `PASSWORD` to be
   the password you created before.
 
 - NOTE: If the connection string has a '?' close to the end (like GET
