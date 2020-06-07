@@ -42,9 +42,8 @@ By default, MongoDB bans everybody, except IP addresses on the "whitelist" (like
 
 2. Click the green button `Add Your Current IP Address`
 
-3. Click the green button `Add IP Address`
-
-
+3. Click the green button `Add IP Address` (Or, better yet, click on "Allow
+access from anywhere (0.0.0.0/0)" so it will work for every IP)
 
 **Recommended:** Add `0.0.0.0/0` in addition / instead of your current IP
 address. This will whitelist ALL IP addresses. (Less secure, but more
@@ -91,6 +90,11 @@ You should be able to test some Mongo commands here, if you wish:
     db.testCollection.find({})
 
 
+- HINT: If you are having trouble logging in with the random password it gives
+  you, try making one that's easily typeable
+- HINT: If the end of the connection string looks like `<dbName>`, change that
+  to something like "testdatabase" instead (without pointy brackets)
+
 ### Connect your cluster to your MERN backend
 
 Now, you want to have your MERN backend connect to your MongoDB database.
@@ -116,3 +120,33 @@ similar to following line:
 
 - NOTE: If the connection string has a '?' close to the end (like GET
   parameters), you should probably delete it any everything that follows it
+
+
+
+### Trouble shooting
+
+#### User name and password getting rejected
+
+If you have issues connecting, make sure your username / password of your
+database user, and your IP address is whitelisted correctly, and database user
+is, consider doing the following steps:
+
+1. Click on the name of your cluster
+
+2. On the left is a nav bar. Click on the "Database Access" item.
+
+3. Then, click on either "ADD NEW DATABASE USER" or click on "EDIT" for the
+existing user (e.g. dbUser).
+
+4. Now, type in a new, custom password, that's easy for you to remember
+
+5. Save
+
+6. Now click on Network Access
+
+7. Ensure one of the rules there says "includes your current IP address" or
+something similar. If not, click "+ ADD IP ADDRESS" and add either a global
+0.0.0.0/0 whitelist, or add your current IP & save
+
+8. Finally, if the end of the connection string looks like `<dbName>`, change
+that to something else (like "testdatabase", that is without pointy brackets)
